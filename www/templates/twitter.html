@@ -1,0 +1,75 @@
+<!--TwitterMobileUI style links -->
+<link rel="stylesheet" href="lib\TwitterMobileUI\css\TwitterMobileUI.css" media="screen" title="no title" charset="utf-8">
+<!--TwitterMobileUI scripts -->
+<script type="text/javascript" src="lib\TwitterMobileUI\js\ion-affix-1.0.1.js"></script>
+
+<ion-view view-title="Twitter">
+
+  <!-- Display only If data is loaded (dataloaded == true) -->
+  <ion-pane ng-if="dataLoaded == true">
+    <ion-content has-bouncing="false" class="main-content">
+      <ion-header-bar shrink-header bar class="bar bar-transparent" style="height: 100%;">
+        <img src="{{bannerUrl}}" alt="" style="background: #222 url('{{bannerUrl}}') no-repeat center center; position:relative; height: 100%;width: 100%;"/>
+      </ion-header-bar>
+      <div class="user-info">
+        <div class="avatar">
+          <img src="{{avatarUrlLarge}}" alt="" style="margin-top:5px;"/>
+        </div>
+        <h1 class="user-info-name">{{displayName}}</h1>
+        <p class="user-info-handle">{{handle}}</p>
+        <p class="user-info-description">{{description}}
+        </p>
+        <div class="user-info-meta">
+          <div class="meta-item">
+            <i class="ion-ios-location"></i>
+            <span>{{location}}</span>
+          </div>
+          <div class="meta-item">
+            <i class="ion-link"></i>
+            <span>
+              <a ng-click='openInAppBrowser("{{url_expanded}}")'>{{url_display}}</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="item item-avatar" ng-repeat="tweet in tweets">
+          <img src="{{avatarUrlLarge}}">
+          <div class="tweet-meta">
+            <h4 class="user">
+              {{displayName}}
+              <span class="user-handle">{{handle}}</span>
+            </h4>
+            <span class="time">{{ timeSince(tweet.created_at) }}
+            </span>
+          </div>
+          <p class="tweet-body">{{ tweet.data.tweet.text.textString }}</p>
+          <span>
+            <a style="text-decoration:none;" ng-click='openInAppBrowser("{{tweet.data.tweet.permalinkUrl}}")'>View conversation</a>
+          </span>
+          <div class="tweet-actions">
+            <i class="ion-reply"></i>
+            <i class="ion-arrow-return-left"></i>
+            <i class="ion-ios-star"></i>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+
+  <!-- Display only If data failed to loaded (dataloaded != true) -->
+  <!-- data load failed Error -->
+  <ion-pane ng-if="dataLoaded == false">
+    <div class="card no-internet-connection">
+      <div class="item item-divider header">
+        <i class="ion-alert-circled"></i>
+        No Data Loaded
+      </div>
+      <div class="item item-text-wrap content">
+        Sorry, no data loaded. Please try again later.
+      </div>
+    </div>
+  </ion-pane>
+
+</ion-view>

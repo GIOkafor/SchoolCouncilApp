@@ -1,0 +1,217 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #1abc9c;
+  height: 100vh;
+  cursor: url("http://ionicframework.com/img/finger.png"), auto;
+}
+
+.iphone-container {
+  position: relative;
+  width: 370px;
+  height: 80vh;
+  margin: 10vh auto;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.tuck .bar.bar-transparent {
+  z-index: 0;
+}
+.tuck .scroll-content {
+  z-index: 999;
+  overflow: visible;
+}
+.tuck.on .bar.bar-transparent {
+  z-index: 999;
+}
+.tuck.on .scroll-content {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.clearfix:after, .user-info .user-info-meta:after, .item .tweet-meta:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix, .user-info .user-info-meta, .item .tweet-meta {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix, * html .user-info .user-info-meta, .user-info * html .user-info-meta, * html .item .tweet-meta, .item * html .tweet-meta {
+  height: 1%;
+}
+
+.clearfix, .user-info .user-info-meta, .item .tweet-meta {
+  display: block;
+}
+
+/* close commented backslash hack */
+.bar.bar-transparent {
+  min-height: 45px;
+  max-height: 125px;
+  position: relative;
+  background-color: #222 !important;
+  border-bottom: 0;
+  padding: 0;
+}
+.bar.bar-transparent .buttons .button {
+  color: white;
+  line-height: 100 !important;
+}
+.bar.bar-transparent .title {
+  z-index: 9999;
+  left: 0px !important;
+  width: 100%;
+  color: white;
+  line-height: 18px;
+  top: 3px;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  transition: all 0.45s ease-in-out;
+}
+.bar.bar-transparent .title.show {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.bar.bar-transparent .title.no-show {
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -o-transform: translateY(40px);
+  transform: translateY(40px);
+  opacity: 0;
+}
+.bar.bar-transparent .title .tweet-count {
+  display: block;
+  font-size: 13px;
+}
+
+.header-bar-bg {
+  background: #222  no-repeat center center;
+  background-size: auto;;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll-content {
+  background: white;
+}
+
+
+.avatar {
+  border: 2px solid white;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  max-width: 65px;
+  max-height: 65px;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  padding: 10px 10px 0 10px;
+}
+.user-info .user-info-name {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.user-info .user-info-handle {
+  color: #8899A6;
+  margin-top: 0;
+}
+.user-info .user-info-description a {
+  color: #2678B7;
+  text-decoration: none;
+}
+.user-info .user-info-meta {
+  color: #8899A6;
+}
+.user-info .user-info-meta .meta-item {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+.user-info .user-info-meta a {
+  color: #2678B7;
+  text-decoration: none;
+}
+.user-info .user-info-meta i {
+  margin-right: 10px;
+}
+
+.segmented-control-item {
+  padding: 5px 10px;
+  border-top: 0;
+  border-color: #8899A6;
+}
+.segmented-control-item .button {
+  border-color: #8899A6;
+  background: white;
+  color: #8899A6;
+}
+.segmented-control-item .button.active {
+  box-shadow: none;
+  background: #8899A6;
+  color: white;
+}
+
+.item.item-avatar {
+  padding: 10px 10px 10px 72px;
+}
+.item.item-avatar img {
+  top: 10px;
+  border-radius: 3px !important;
+}
+.item .tweet-meta {
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.item .tweet-meta .user {
+  float: left;
+  font-weight: bold;
+  margin: 0;
+}
+.item .tweet-meta .user .user-handle {
+  font-weight: normal;
+  color: #8899A6;
+}
+.item .tweet-meta .time {
+  float: right;
+  font-size: 12px;
+  color: #8899A6;
+}
+.item .tweet-body {
+  overflow: visible;
+  text-overflow: initial;
+  white-space: normal;
+}
+.item .tweet-actions i {
+  color: #CCD6DD;
+  padding-right: 25px;
+  font-size: 14px;
+}

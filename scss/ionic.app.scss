@@ -1,0 +1,111 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/* Empty. Add your own CSS if you like */
+#home-title {
+  text-align: center;
+  margin: 15px;
+}
+#home-img {
+  width: 90%;
+  margin: 5%;
+  border-radius: 10px;
+}
+#home-detail {
+  margin: 15px;
+  text-align: center;
+}
+.event-title {
+  background-color: #69A84F;
+  color: white;
+  font-size: 14px;
+  padding: 8px 0;
+  text-align: center;
+}
+.event-date,
+.event-detail,
+.event-time {
+  font-size: 12px;
+  padding: 0 10px;
+}
+.event-date {
+  color: #4ddbff;
+}
+.event-time {
+  float: right;
+  color: #00a3cc;
+}
+.event-detail {
+
+}
+.news-title {
+  background-color: #69A84F;
+  color: white;
+  font-size: 14px;
+  padding: 8px 0;
+  text-align: center;
+}
+.news-detail {
+  font-size: 14px;
+  padding: 0 10px;
+}
+.news-date {
+  font-size: 10px;
+  float: right;
+}
+.btn {
+  margin-top: 5px;
+}
+.btn-half {
+  width: 49%;
+}
+.pull-right {
+  float: right;
+}
+.no-internet-connection{
+  margin-top: 35%;
+}
+.no-internet-connection .header{
+  color: white;
+  background-color: red;
+}
+
+.no-internet-connection .content{
+  color: black;
+  font-size: 18px;
+  background-color: orange;
+}
+
+// loading spinner styling
+.item-icon-left ion-spinner {
+  float: left;
+  margin-left: -3.2em;
+  margin-right: 1em;
+  margin-top: -0.2em;
+ }
+.spinner svg {
+  width: 28px;
+  height: 28px;
+  stroke: #999;
+  fill: #999;
+}

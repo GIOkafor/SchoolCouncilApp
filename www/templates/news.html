@@ -1,0 +1,40 @@
+<ion-view view-title="News">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="newsRefresher()"></ion-refresher>
+    <ion-list ng-if="dataLoaded == true">
+      <ion-item ng-repeat="item in news">
+        <a href="#/app/news/{{item.id}}" style="text-decoration: none;">
+          <div class="first item-text-wrap">
+            <h1 class="news-title">{{item.title_plain}}</h1>
+            <p class="news-detail">{{item.excerpt | limitTo:150}}
+              {{item.excerpt.length > 150 ? '&hellip;':''}}</p>
+          </div>
+        </a>
+        <span class="news-date">{{item.modified}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <!-- number of news loaded < 1  Error -->
+  <ion-pane ng-if="news.length < 1 && dataLoaded == true">
+    <div class="card no-internet-connection">
+      <div class="item item-text-wrap content text-center">
+        Sorry, No news found.
+      </div>
+    </div>
+  </ion-pane>
+
+  <!-- Display only If data failed to loaded (dataloaded != true) -->
+  <!-- data load failed Error -->
+  <ion-pane ng-if="dataLoaded == false">
+    <div class="card no-internet-connection">
+      <div class="item item-divider header">
+        <i class="ion-alert-circled"></i>
+        No Data Loaded
+      </div>
+      <div class="item item-text-wrap content">
+        Sorry, no data loaded. Please try again later.
+      </div>
+    </div>
+  </ion-pane>
+</ion-view>

@@ -1,0 +1,12 @@
+{
+  "name": "SchoolCouncilApp",
+  "app_id": "41657ddb",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

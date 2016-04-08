@@ -1,0 +1,17 @@
+<ion-view view-title="Event Detail">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in events | filter: {id: eventId}">
+        <div class="first item-text-wrap">
+          <h1 class="event-title">{{item.title}}</h1>
+          <p class="event-time">{{item.time}}</p>
+          <p class="event-date">{{item.date}}</p>
+          <p class="event-detail">{{item.detail}}</p>
+          <br>
+          <button class="btn-half button icon-left ion-map button-small button-positive" href="">Get Direction</button>
+          <button class="btn-half button icon-left ion-calendar button-small button-positive" href="">Add to calander</button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view view-title="Notification">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in events">
+        <a href="#/app/events/{{item.id}}" style="text-decoration: none;">
+          <div class="first item-text-wrap">
+            <h1 class="event-title">{{item.title}}</h1>
+            <p class="event-time">{{item.time}}</p>
+            <p class="event-date">{{item.date}}</p>
+            <p class="event-detail">{{item.detail | limitTo:100}}
+              {{item.detail.length > 100 ? '&hellip;':''}}</p>
+          </div>
+        </a>
+      </ion-item>
+      <ion-item ng-repeat="item in news" href="#/app/news/{{item.id}}">
+        <div class="first item-text-wrap">
+          <h1 class="news-title">{{item.title}}</h1>
+          <p class="news-detail">{{item.detail | limitTo:150}}
+            {{item.detail.length > 150 ? '&hellip;':''}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

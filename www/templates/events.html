@@ -1,0 +1,17 @@
+<ion-view view-title="Events">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in events">
+        <a href="#/app/events/{{item.id}}" style="text-decoration: none;">
+          <div class="item-text-wrap">
+            <h1 class="event-title">{{item.title}}</h1>
+            <p class="event-time">{{item.time}}</p>
+            <p class="event-date">{{item.date}}</p>
+            <p class="event-detail">{{item.detail | limitTo:100}}
+              {{item.detail.length > 100 ? '&hellip;':''}}</p>
+          </div>
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

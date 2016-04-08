@@ -1,0 +1,245 @@
+
+@import "bourbon";
+
+$twitter-gray: #8899A6;
+$twitter-link-blue: #2678B7;
+
+html,body {
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   background: #1abc9c;
+   height: 100vh;
+   cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+.iphone-container {
+   position: relative;
+   width: 370px;
+   height: 80vh;
+   margin: 10vh auto;
+   box-shadow: 0 0 0 4px rgba(0,0,0, .15);
+}
+
+.tuck {
+	.bar.bar-transparent {
+		z-index: 0;
+	}
+
+	.scroll-content {
+		z-index: 999;
+		overflow: visible;
+	}
+
+	&.on {
+		.bar.bar-transparent {
+			z-index: 999;
+		}
+
+		.scroll-content {
+			z-index: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.bar.bar-transparent {
+  min-height: 45px;
+  max-height: 125px;
+  position: relative;
+  background-color: #222 !important;
+  border-bottom: 0;
+  padding: 0;
+
+  .buttons {
+    .button {
+      color: white;
+      line-height: 100 !important;
+    }
+  }
+
+  .title {
+  	z-index: 9999;
+  	left: 0px !important;
+  	width: 100%;
+	color: white;
+	line-height: 18px;
+	top: 3px;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	@include transition(all .45s ease-in-out);
+
+	&.show {
+		opacity: 1;
+		@include transform(translateY(0px));
+	}
+
+	&.no-show {
+		@include transform(translateY(40px));
+		opacity: 0;
+	}
+
+	.tweet-count {
+		display: block;
+		font-size: 13px;
+
+	}
+  }
+}
+
+.header-bar-bg {
+  background: #222 url('https://pbs.twimg.com/profile_banners/234441228/1418180666/1500x500') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.scroll-content{
+    background: white;
+
+  &.has-header {
+    top: 125px;
+  }
+
+}
+
+.avatar {
+	border: 2px solid white;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	max-width: 65px;
+	max-height: 65px;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.user-info {
+	padding: 10px 10px 0 10px;
+
+	.user-info-name {
+		font-size: 18px;
+		margin-top: 0;
+		margin-bottom: 0px;
+	}
+
+	.user-info-handle {
+		color: $twitter-gray;
+		margin-top: 0;
+	}
+
+	.user-info-description {
+		a {
+			color: $twitter-link-blue;
+			text-decoration: none;
+		}
+	}
+
+  .user-info-meta {
+    color: $twitter-gray;
+    @extend .clearfix;
+
+    .meta-item {
+      display: inline-block;
+      float: left;
+      margin-right: 15px;
+    }
+
+    a {
+      color: $twitter-link-blue;
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+.segmented-control-item {
+	padding: 5px 10px;
+	border-top: 0;
+	border-color: $twitter-gray;
+
+	.button {
+		border-color: $twitter-gray;
+		background: white;
+		color: $twitter-gray;
+
+		&.active {
+			box-shadow: none;
+			background: $twitter-gray;
+			color: white;
+		}
+	}
+}
+
+.item {
+	&.item-avatar {
+		padding: 10px 10px 10px 72px;
+
+		img {
+			top: 10px;
+			border-radius: 3px !important;
+		}
+	}
+
+	.tweet-meta {
+		@extend .clearfix !optional;
+		line-height: 1;
+		margin-bottom: 5px;
+
+		.user {
+			float: left;
+			font-weight: bold;
+			margin: 0;
+
+			.user-handle {
+				font-weight: normal;
+				color: $twitter-gray;
+			}
+		}
+
+		.time {
+			float: right;
+			font-size: 12px;
+			color: $twitter-gray;
+		}
+	}
+
+	.tweet-body {
+		overflow: visible;
+		text-overflow: initial;
+		white-space: normal;
+	}
+
+	.tweet-actions {
+		i {
+			color: #CCD6DD;
+			padding-right: 25px;
+			font-size: 14px;
+		}
+	}
+}

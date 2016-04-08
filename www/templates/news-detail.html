@@ -1,0 +1,30 @@
+<ion-view view-title="News Detail">
+  <ion-content>
+    <ion-list ng-if="dataLoaded == true">
+      <ion-item>
+        <div class="first item-text-wrap">
+          <h1 class="news-title">{{item.title_plain}}</h1>
+          <p class="news-detail">{{item.content}}</p>
+          <br>
+          <button class="button button-block button-balanced" ng-click='openInAppBrowser("{{item.url}}")'>
+            Website
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <!-- Display only If data failed to loaded (dataloaded != true) -->
+  <!-- data load failed Error -->
+  <ion-pane ng-if="dataLoaded == false">
+    <div class="card no-internet-connection">
+      <div class="item item-divider header">
+        <i class="ion-alert-circled"></i>
+        No Data Loaded
+      </div>
+      <div class="item item-text-wrap content">
+        Sorry, no data loaded. Please try again later.
+      </div>
+    </div>
+  </ion-pane>
+</ion-view>
